@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Datacode:</b>
+  <%= @dataed.datacode %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= @dataed.parent %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @dataed.subject %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @dataed.url %>
+</p>
+
+<p>
+  <b>Click:</b>
+  <%= @dataed.click %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @dataed.level %>
+</p>
+
+<%= link_to 'Edit', edit_dataed_path(@dataed) %> |
+<%= link_to 'Back', dataeds_path %>

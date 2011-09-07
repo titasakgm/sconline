@@ -1,0 +1,42 @@
+<%= form_for(@dataed) do |f| %>
+  <% if @dataed.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dataed.errors.count, "error") %> prohibited this dataed from being saved:</h2>
+
+      <ul>
+      <% @dataed.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :datacode %><br />
+    <%= f.text_field :datacode %>
+  </div>
+  <div class="field">
+    <%= f.label :parent %><br />
+    <%= f.text_field :parent %>
+  </div>
+  <div class="field">
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :click %><br />
+    <%= f.text_field :click %>
+  </div>
+  <div class="field">
+    <%= f.label :level %><br />
+    <%= f.text_field :level %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

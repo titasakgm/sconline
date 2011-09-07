@@ -1,0 +1,42 @@
+<h1>Listing dataeds</h1>
+
+<%= form_tag dataeds_path, :method => 'GET' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<table>
+  <tr>
+    <th>Datacode</th>
+    <th>Parent</th>
+    <th>Subject</th>
+    <th>Url</th>
+    <th>Click</th>
+    <th>Level</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dataeds.each do |dataed| %>
+  <tr>
+    <td><%= dataed.datacode %></td>
+    <td><%= dataed.parent %></td>
+    <td><%= dataed.subject %></td>
+    <td><%= dataed.url %></td>
+    <td><%= dataed.click %></td>
+    <td><%= dataed.level %></td>
+    <td><%= link_to 'Show', dataed %></td>
+    <td><%= link_to 'Edit', edit_dataed_path(dataed) %></td>
+    <td><%= link_to 'Destroy', dataed, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+<p>
+<%= will_paginate @dataeds %>
+</table>
+
+<br />
+
+<%= link_to 'New Dataed', new_dataed_path %>
